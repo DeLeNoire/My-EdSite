@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client"
+import React, {Suspense, useState} from "react"
+import { App } from "./App"
+import { Underlay, Overlay } from "./layout"
+import "./styles.css"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+function App1() {
+    const [currentPage, setCurrentPage] = useState(0);
+    const totalPages = 4; // Set the total number of pages
+
+    const handleNextPage = () => {
+        setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+    };
+
+    const handlePrevPage = () => {
+        setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
+    };
+
+    return (
+        <div>
+            <Underlay page={currentPage} />
+
+            <Overlay page={currentPage} onNext={handleNextPage} onPrev={handlePrevPage} />
+        </div>
+    );
+}
+export default App1;
+
+createRoot(document.getElementById("root")).render(
+  <>
+    {/*<Underlay />*/}
+    <Suspense fallback={null}>
+        <App/>
+      <App1 />
+
+    </Suspense>
+    {/*<Overlay />*/}
+  </>,
+)
