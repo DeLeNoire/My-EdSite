@@ -33,7 +33,7 @@ export function Underlay({page}) {
                 <p
                     style={{
                         position: 'absolute',
-                        bottom: 170,
+                        bottom: 100,
                         right: 40,
                         fontSize: 250,
                         lineHeight: '100%',
@@ -76,7 +76,7 @@ export function Underlay({page}) {
                 <p
                     style={{
                         position: 'absolute',
-                        bottom: 170,
+                        bottom: 100,
                         right: 40,
                         fontSize: 250,
                         lineHeight: '100%',
@@ -119,7 +119,7 @@ export function Underlay({page}) {
                 <p
                     style={{
                         position: 'absolute',
-                        bottom: 170,
+                        bottom: 100,
                         right: 40,
                         fontSize: 250,
                         lineHeight: '100%',
@@ -160,7 +160,7 @@ export function Underlay({page}) {
                 <p
                     style={{
                         position: 'absolute',
-                        bottom: 170,
+                        bottom: 100,
                         right: 40,
                         fontSize: 250,
                         lineHeight: '100%',
@@ -219,7 +219,7 @@ export function Underlay({page}) {
           style={{
             transform: "rotate3d(0, 0, 1, 90deg) translate3d(100%,10px,0)",
             transformOrigin: "right",
-            fontSize: 12,
+            fontSize: 24,
             fontWeight: "700",
             lineHeight: "100%",
             textAlign: "right",
@@ -237,13 +237,15 @@ export function Underlay({page}) {
           width: "100%",
           flex: "1 1 0%",
           padding: 0,
+
           display: "inline-flex",
           flexDirection: "row",
           alignItems: "flex-end",
           justifyContent: "center",
         }}>
-        <p style={{ flex: "1 1 0%", fontSize: 200, lineHeight: "1em", color: "black", margin: 0, letterSpacing: -10 }}>
-            SD
+          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+
+        <p style={{ flex: "1 1 0%", fontSize: 10, lineHeight: "1em", color: "green", margin: 0,bottom:100, letterSpacing: 10 }}>
         </p>
         <div style={{ width: 10 }} />
         {/*<p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "100%", textAlign: "right", color: "black", margin: 0, letterSpacing: -10 }}>_01</p>*/}
@@ -260,10 +262,10 @@ export function Underlay({page}) {
           alignItems: "flex-end",
           justifyContent: "center",
         }}>
-        <p className="full" style={{ whiteSpace: "nowrap", flex: "1 1 0%", fontSize: 12, lineHeight: "1.5em", color: "black" }}>
-          <b>Curiosity Fuels Wisdom</b>
-          <br />
-            Ignition to  the Flame of Learning...
+        <p className="full" style={{ whiteSpace: "nowrap", flex: "1 1 0%", fontSize: 20, lineHeight: "1.5em", color: "black" }}>
+          {/*<b>Curiosity Fuels Wisdom</b>*/}
+          {/*<br />*/}
+          {/*  Ignition to  the Flame of Learning...*/}
         </p>
         <div style={{ width: 10 }} />
         <p

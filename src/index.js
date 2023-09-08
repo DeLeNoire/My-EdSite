@@ -4,6 +4,7 @@ import { App } from "./App"
 import { Underlay, Overlay } from "./layout"
 import "./styles.css"
 
+// import Root from './Root';
 
 
 function App1() {
@@ -26,16 +27,22 @@ function App1() {
         </div>
     );
 }
-export default App1;
 
-createRoot(document.getElementById("root")).render(
-  <>
-    {/*<Underlay />*/}
-    <Suspense fallback={null}>
-        <App/>
-      <App1 />
+function Root() {
+    return (
+       <>
+           <Suspense fallback={null}>
 
-    </Suspense>
-    {/*<Overlay />*/}
-  </>,
-)
+               <App />
+               <App1 />
+           </Suspense>
+
+       </>
+
+    );
+}
+
+export default Root;
+
+
+createRoot(document.getElementById('root')).render(<Root />);
